@@ -5,6 +5,8 @@ namespace CupNoodles\ItemSales\Controllers;
 use AdminMenu;
 use DB;
 
+use Admin\Classes\FilterScope;
+
 
 class ItemSales extends \Admin\Classes\AdminController
 {
@@ -36,12 +38,15 @@ class ItemSales extends \Admin\Classes\AdminController
 
     public function index()
     {
-
-
         $this->addJs('extensions/cupnoodles/itemsales/assets/js/itemsales.js', 'cupnoodles-itemsales');
-        $this->asExtension('ListController')->index();
+
+        
+        $index = $this->asExtension('ListController');
+
+        $index->index();
     }
-    
+
+
     public function expand($route){
         $post = post();
         

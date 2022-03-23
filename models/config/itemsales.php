@@ -4,7 +4,7 @@
 $config['list']['filter'] = [
     'search' => [
         'prompt' => 'cupnoodles.itemsales::default.search_placeholder',
-        'mode' => 'all',
+        'mode' => 'all'
     ],
     'scopes' => [
         'location' => [
@@ -18,8 +18,7 @@ $config['list']['filter'] = [
         'date' => [
             'label' => 'lang:admin::lang.text_filter_date',
             'type' => 'daterange',
-            'scope' => 'whereBetweenDates',
-            'default' => 'Today'
+            'scope' => 'whereBetweenDates'
         ],
     ],
 ];

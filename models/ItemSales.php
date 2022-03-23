@@ -33,6 +33,10 @@ class ItemSales extends Model{
         static::addGlobalScope('group_by_menu_id', function ($builder) {
             $builder->groupBy('menu_id');
         });
+
+        static::addGlobalScope('order_exists', function ($builder) {
+            $builder->whereHas('order');
+        });
     }
 
     public function scopeWhereFromLocation($query, $locationId)
@@ -48,20 +52,9 @@ class ItemSales extends Model{
 
     public function scopeWhereBetweenDates($query, $args)
     {   
-        if($args[0] != '' && $args[1] != ''){
-            $query->whereRelation('order', 'order_date', '>=', $args[0]);
-            $query->whereRelation('order', 'order_date', '<=', $args[1]);
-        }
+        $query->whereRelation('order', 'order_date', '>=', $args[0]);
+        $query->whereRelation('order', 'order_date', '<=', $args[1]);
         return $query;
     }
-
-
-
-
-
-
-
-
-
 
 }
