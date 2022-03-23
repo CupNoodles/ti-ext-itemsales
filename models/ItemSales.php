@@ -22,6 +22,11 @@ class ItemSales extends Model{
                 'key' => 'order_id',
                 'foreignKey' => 'order_id'
             ],
+            'menu' => [
+                'Admin\Models\Menus_model',
+                'key' => 'menu_id',
+                'foreignKey' => 'menu_id'
+            ],
         ]
     ];
 
@@ -37,6 +42,8 @@ class ItemSales extends Model{
         static::addGlobalScope('order_exists', function ($builder) {
             $builder->whereHas('order');
         });
+
+
     }
 
     public function scopeWhereFromLocation($query, $locationId)

@@ -13,7 +13,7 @@
 
     <tr>
         <td>
-            <a class="btn btn-edit" href="{{ site_url('admin/orders/edit') . '/' .$order->order->order_id }}" data-original-title="" title="">
+            <a class="btn btn-edit" href="{{ site_url('admin/orders/edit') . '/' .$order->order->order_id }}" data-original-title="" title="" style="padding: 0">
                     <i class="fa fa-pencil"></i>
             </a>
         </td>
