@@ -19,7 +19,7 @@ $config['list']['filter'] = [
             'label' => 'lang:admin::lang.text_filter_date',
             'type' => 'daterange',
             'scope' => 'whereBetweenDates',
-            'default' => ['value' => [date('Y-m-d'), date('Y-m-d')]],
+            //'default' => ['value' => [date('Y-m-d'), date('Y-m-d')]],
             'value' => [date('Y-m-d'), date('Y-m-d')]
         ],
     ],
@@ -44,7 +44,7 @@ $config['list']['columns'] = [
     'name' => [
         'label' => 'cupnoodles.itemsales::default.item_name',
         'relation' => 'menu',
-        'select' => 'IF(print_docket = "", name, print_docket)',
+        'select' => 'name',
         'searchable' => TRUE,
         'sortable' => TRUE
     ],
